@@ -1,6 +1,7 @@
 'use strict';
 
 // 3rd Party Resources
+require('dotenv').config();
 const express = require('express');
 const bcrypt = require('bcrypt');
 const base64 = require('base-64');
