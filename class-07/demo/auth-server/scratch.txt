@@ -1,0 +1,13 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5jb2tvcyIsImlhdCI6MTcxNTEwNTA4N30.zNTIohGjSAplEOTGmNoQBBXZranG0qL1KB_h-Ys94B4",
+  "id": 1,
+  "username": "johncokos",
+  "password": "$2b$05$zFi.oa0AN1LLMpS/vGr09Oc2B5LCxVng9j3j.4re62S17y/W6xPv2",
+  "email": "john@example.com",
+  "name": "John C",
+  "createdAt": "2024-05-06T20:44:33.495Z",
+  "updatedAt": "2024-05-06T20:44:33.495Z"
+}
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5jb2tvcyIsImlhdCI6MTcxNTEwNTA4N30.zNTIohGjSAplEOTGmNoQBBXZranG0qL1KB_h-Ys94B4
