@@ -1,0 +1,33 @@
+const Express = require('express');
+const app = Express();
+
+app.get('/home', handleHome);
+
+function handleHome( req, res ) {
+
+}
+
+
+events.on('thing', function(payload){
+
+});
+
+events.on('something', handleSomething);
+
+function handleSomething( payload ) {
+
+}
+
+
+let orderData = {
+  customer: "John",
+  items: "Flowers",
+  address: "main st"
+}
+event.emit('order', orderData);
+
+
+events.on('order', handleOrder);
+function handleOrder(order) {
+
+}
