@@ -16,3 +16,11 @@ setInterval( () => {
   console.log('Light Detected', brightness);
   events.emit('light-detected', {brightness});
 }, 250)
+
+
+// it("responds properly to light events", () => {
+//   events.emit('light');
+//   expect( eyelid ).toHaveBeenCalled();
+//   expect( pupil ).toHaveBeenCalled();
+// })
+
