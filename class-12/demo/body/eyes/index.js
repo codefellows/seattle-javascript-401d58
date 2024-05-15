@@ -2,9 +2,9 @@
 
 const io = require('socket.io-client');
 
-const URL = 'http://localhost:3000';
+// const URL = 'http://localhost:3000';
 // const URL = 'https://brain-c3y4.onrender.com';
-// const URL = 'http://ded8-50-47-110-82.ngrok-free.app';
+const URL = 'http://75f8-50-47-110-82.ngrok-free.app';
 
 const brainConnection = io.connect(URL);
 

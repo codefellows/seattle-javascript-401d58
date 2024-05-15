@@ -1,8 +1,15 @@
 'use strict';
 
-const port = process.env.PORT || 3000;
+const express = require('express');
+const { Server } = require('socket.io');
+const { createServer } = require('node:http');
 
-const io = require('socket.io')(port);
+const app = express();
+const server = createServer(app);
+const io = new Server(server);
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => { console.log('App up and running'); });
 
 // Automatically triggered anytime a client connects
 io.on('connection', (socket) => {
