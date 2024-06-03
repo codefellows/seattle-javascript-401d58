@@ -1,0 +1,17 @@
+$background-color: lightgray;
+$text-color: purple;
+$border-radius: 10px;
+$padding: 10px;
+
+.counter {
+  background-color: $background-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  padding: $padding;
+}
+
+.note {
+  border-radius: $border-radius;
+  padding: $padding;
+  background: lighten($background-color, 25%);
+}
