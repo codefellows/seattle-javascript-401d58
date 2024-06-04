@@ -1,0 +1,22 @@
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked + span {
+  background: lightblue;
+}
+
+span {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+div {
+  margin: 20px;
+}
+
+label {
+  margin: 10px;
+}
