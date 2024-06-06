@@ -58,7 +58,7 @@ function App() {
       <h1>Hello Class</h1>
       <Form makeTheCall={makeTheAPICall} />
       <hr />
-      <pre data-testid="json-display">{json}</pre>
+      { json && <pre data-testid="json-display">{json}</pre> }
       <hr />
       <Counter />
     </>

@@ -8,16 +8,9 @@ import App from './App.jsx';
 // What we expect back from our server ...
 // This creates a CONTRACT between front end and back end teams
 const getReturn = [ {name:'John'}, {name:'Cathy'} ];
-const getReturnString = JSON.stringify(getReturn);
-
 const postReturn = { id:1, name:'John'}
-const postReturnString = JSON.stringify(postReturn);
-
 const putReturn = { id:1, name:'Zach'}
-const putReturnString = JSON.stringify(putReturn);
-
 const deleteReturn = { };
-const deleteReturnString = JSON.stringify(deleteReturn);
 
 const server = setupServer(
   http.get('/customers', (req, res, ctx) => {
@@ -46,7 +39,6 @@ describe('App', () => {
 
     const urlInput = screen.getByTestId('url-input');
     const getInput = screen.getByTestId('get-input');
-    const jsonDisplay = screen.getByTestId('json-display');
     const submitButton = screen.getByTestId('fetch-api-button');
 
     let method = 'get';
@@ -58,9 +50,15 @@ describe('App', () => {
     fireEvent.click(submitButton);
 
     // does the json display show the results of the API call?
-    expect(jsonDisplay).not.toBeNull();
-    // How can I test that the json display is what I expect?
-    // expect(jsonDisplay).toHaveTextContent(getReturnString);
+
+    // 1. wait for the json-display to appear after the call is done
+    await screen.findByTestId('json-display');
+
+    // 2. convert whatever is showing in the display to JSON
+    const displayedJSON = JSON.parse(screen.getByTestId('json-display').textContent);
+
+    // 3. compare the displayed JSON to what we expect (from the mocked server)
+    expect(displayedJSON).toEqual(getReturn);
   });
 
   it('should do a post api call', async () => {
@@ -69,7 +67,6 @@ describe('App', () => {
 
     const urlInput = screen.getByTestId('url-input');
     const postInput = screen.getByTestId('post-input');
-    const jsonDisplay = screen.getByTestId('json-display');
     const submitButton = screen.getByTestId('fetch-api-button');
 
     let method = 'post';
@@ -81,16 +78,25 @@ describe('App', () => {
     fireEvent.click(submitButton);
 
     // does the json display show the results of the API call?
-    expect(jsonDisplay).not.toBeNull();
+
+    // 1. wait for the json-display to appear after the call is done
+    await screen.findByTestId('json-display');
+
+    // 2. convert whatever is showing in the display to JSON
+    const displayedJSON = JSON.parse(screen.getByTestId('json-display').textContent);
+
+    // 3. compare the displayed JSON to what we expect (from the mocked server)
+    expect(displayedJSON).toEqual(postReturn);
+
   });
 
-  it('should do a put api call', async () => {
+  // it('should do a put api call', async () => {
 
-  });
+  // });
 
-  it('should do a delete api call', async () => {
+  // it('should do a delete api call', async () => {
 
-  });
+  // });
 
 });
 
